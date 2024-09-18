@@ -7,7 +7,7 @@ const App = () => {
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/portfolio" element={<HomePage />} />
         {/* <Route path="/sign-up" element={<SignUpPage />} />
       <Route path="/plants" element={<PlantListPage />} />
       <Route path="/plants/:plantId" element={<PlantShowPage />} /> */}
