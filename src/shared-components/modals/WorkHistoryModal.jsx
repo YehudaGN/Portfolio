@@ -30,7 +30,7 @@ const WorkHistoryModal = props => {
           </div>
 
           <div className="mt-4 flex flex-col gap-4">
-            <div className="flex justify-between mb-2">
+            <div className="flex justify-between">
               <span className="text-lg border-b border-white w-[62px]">
                 Poplin :
               </span>
