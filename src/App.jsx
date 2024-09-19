@@ -10,9 +10,6 @@ const App = () => {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        {/* <Route path="/sign-up" element={<SignUpPage />} />
-      <Route path="/plants" element={<PlantListPage />} />
-      <Route path="/plants/:plantId" element={<PlantShowPage />} /> */}
       </Routes>
     </BrowserRouter>
   );

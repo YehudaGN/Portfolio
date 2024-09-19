@@ -2,12 +2,12 @@ import { useState } from "react";
 import clsx from "clsx";
 import ModalWrapper from "../../shared-components/modals/ModalWrapper";
 import AboutModal from "../../shared-components/modals/AboutModal";
-import ProjectsModal from "../../shared-components/modals/ProjectsModal";
+import WorkHistoryModal from "../../shared-components/modals/WorkHistoryModal";
 import ContactModal from "../../shared-components/modals/ContactModal";
 
 const HomePage = () => {
   const [aboutOpen, setAboutOpen] = useState(false);
-  const [projectsOpen, setProjectsOpen] = useState(false);
+  const [workHistory, setWorkHistory] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
 
   return (
@@ -20,12 +20,12 @@ const HomePage = () => {
           <AboutModal onCloseClick={() => setAboutOpen(false)} />
         </ModalWrapper>
       )}
-      {projectsOpen && (
+      {workHistory && (
         <ModalWrapper
-          isOpen={projectsOpen}
-          onCloseClick={() => setProjectsOpen(false)}
+          isOpen={workHistory}
+          onCloseClick={() => setWorkHistory(false)}
         >
-          <ProjectsModal onCloseClick={() => setProjectsOpen(false)} />
+          <WorkHistoryModal onCloseClick={() => setWorkHistory(false)} />
         </ModalWrapper>
       )}
 
@@ -38,7 +38,7 @@ const HomePage = () => {
         </ModalWrapper>
       )}
 
-      {!aboutOpen && !projectsOpen && !contactOpen && (
+      {!aboutOpen && !workHistory && !contactOpen && (
         <div className="min-h-screen flex justify-center bg-gradient-to-b from-slate-300 via-slate-600 to-slate-500 font-sans items-center  uppercase tracking-widest text-slate-300">
           <div className="w-full max-w-5xl flex flex-col items-center m-8">
             <div className="rounded-full w-[50px] h-[50px] border border-white flex justify-center items-center text-3xl p-8 text-white">
@@ -64,8 +64,11 @@ const HomePage = () => {
               >
                 About
               </button>
-              <button className="border-l border-r sm:border-l-0 sm:border-r-0 sm:border-t sm:border-b border-white px-8 py-3 uppercase hover:bg-gray-300/10">
-                Projects
+              <button
+                className="border-l border-r sm:border-l-0 sm:border-r-0 sm:border-t sm:border-b border-white px-8 py-3 uppercase hover:bg-gray-300/10"
+                onClick={() => setWorkHistory(true)}
+              >
+                Work History
               </button>
               <button
                 className="border rounded-b sm:rounded-none sm:rounded-r border-white px-8 py-3 uppercase hover:bg-gray-300/10"
